@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+  <head>
+    <title>Ortiz_HW2</title>
+    
+    <style>
+    h4 	{color:red;}
+    h1  {background: black;}
+    li  {color: blue;}  	
+    </style>
+  
+  </head>
+  <body>
+  	<h1 style="color : white"> GAPIMINDER - Wealth and Health of Nations </h1>
+  	
+
+  	<h2> Countries </h2>
+
+<body>
+        <h3>placeholder</h3>
+        <div id = "viz"></div>
+<body>
+
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script>
+
+        function render() {
+        var myInfo = [countries] //d3.select("viz");
+        myInfo.selectAll("div")
+        .data(myInfo)
+        .enter()
+        .append("div")
+        .style("color", "blue")
+        .text(function(i) {return i});
+      }
+      render();
+
+        function addText() {
+          var newText = d3.select("#text").node().value;
+          myInfo.push(newText);
+        }
+
+    </script>
+</html>
+

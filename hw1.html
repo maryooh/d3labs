@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+  <head>
+    <title>Ortiz_HW1</title>
+    
+    <style>
+    h4 	{color:red;}
+    h1  {background: black}
+    li  {color: blue;}  	
+    </style>
+  
+  </head>
+  <body>
+  	<h1 style="color : white"> GAPIMINDER - Wealth and Health of Nations </h1>
+  	
+
+  	<h2> Countries </h2>
+
+    <div>
+  	<label>Name</label>
+  	<input type="text" id="userInput"/>
+    <button onclick="changeElement();">Add</button>
+    </div>
+
+    <div id="list">
+  	<ul id ="mylist">
+    </ul> 
+    
+  	</div>
+  <script>
+    var userList = "Country";
+    
+    function logList(userList) {
+      var log = document.getElementById("mylist");
+      var newEntry = document.createElement("li");
+      newEntry.innerHTML = userList; 
+      log.appendChild(newEntry);
+
+    }
+
+
+    function changeElement(userList) {
+        if(!userList) {
+          userList = document.getElementById("userInput").value;
+        }
+        var listElements = document.getElementById("list");
+        listElements.innerHTML = userList;
+        logList(userlist);
+
+    }
+
+    
+  </script>
+  </body>
+</html>
