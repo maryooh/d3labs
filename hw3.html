@@ -1,0 +1,99 @@
+<html>
+  <head>
+    <title>hw3.html</title>
+  </head>
+  <body>
+<!DOCTYPE html>
+  <head>
+    <title>Ortiz_HW3</title>
+    
+    <style>
+    h4 	{color:red;}
+    h1  {background: black;}
+    li  {color: blue;}  	
+    </style>
+  
+  </head>
+  <body>
+  	<h1 style="color : white"> GAPIMINDER - Wealth and Health of Nations </h1>
+  	
+
+  	<h2> Countries </h2>
+
+<body>
+        <h3>placeholder</h3>
+        <div id = "viz"></div>
+<body>
+
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script>
+
+        function render() {
+        var myInfo = [countries] //d3.select("viz");
+        myInfo.selectAll("div")
+        .data(myInfo)
+        .enter()
+        .append("div")
+        .style("color", "blue")
+        .text(function(i) {return i});
+      }
+      render();
+
+        function addText() {
+          var newText = d3.select("#text").node().value;
+          myInfo.push(newText);
+        }
+
+    </script>
+
+    //border for circles
+    <svg width="600" height="400">
+      <rect width="600" height="400" fill="none" 
+            stroke="black" stroke-width="1">
+      </rect>
+    // dot elements
+      <g>
+      <g id ="dotGroup"
+      </g>
+
+    </svg>
+
+    //bindng data with d3
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+    //adding data
+    <script>
+    var data = [];
+    d3.json("countris.json", function(error, result){
+      data = result;
+      render(data);
+    })
+    
+    var viz = d3.select("#dotGroup");
+    //definitions
+    var width = 600,
+        height = 400,
+        margin = { top: 90, left: 20, right: 20, bottom: 20},
+        innerWidth = width - margin.left - margin.right;
+        innerHeight = height - margin.top - margin.bottom;
+
+   viz.attr("transform",
+            "translate(" + margin.left + "," + margin.top + ")")        
+
+   //adding circles tied to each data point
+   function render(data) {
+         var dataPoints = viz.selectAll("circle").data(data);
+         dataPoints.enter().append("circle").attr("r", 10);
+         .attr("cx", function(d, i) {return Math.random() * innerWidth})
+         .attr("cy", function(d, i) {return Math.random() * innerHeight})
+         .attr("fill", "black")
+
+    }
+
+    </script>
+
+</html>
+
+
+  </body>
+</html>
